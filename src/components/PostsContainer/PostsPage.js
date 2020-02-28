@@ -15,13 +15,21 @@ const PostsPage = () => {
             {/* map through data here to return a Post and pass data as props to Post */}
             {dummyData.map((item) => {
                 //console.log(item.username);
-                let post = {
-                    username: item.username,
-                    thumbnailUrl: item.thumbnailUrl,
-                    src: item.imageUrl
-                };
+                // let post = {
+                //     username: item.username,
+                //     thumbnailUrl: item.thumbnailUrl,
+                //     src: item.imageUrl
+                // };
 
-                return <Post />;
+                return (
+                    <Post
+                        post={{
+                            username: item.username,
+                            thumbnailUrl: item.thumbnailUrl,
+                            src: item.imageUrl
+                        }}
+                    />
+                );
             })}
         </div>
     );
