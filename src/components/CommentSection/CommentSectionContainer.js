@@ -7,21 +7,18 @@ import "./Comment.css";
 const CommentSection = (props) => {
     // Add state for the comments
     const [comments, setComments] = useState(props.comments);
-    //const [comment, setComment] = useState("");
-    //console.log(comments);
+    const [comment, setComment] = useState("");
 
-    // const changeHandler = (e) => {
-    //     setComment(e.target.value);
-    // };
+    const changeHandler = (e) => {
+        setComment(e.target.value);
+    };
 
-    // const submitHandler = (e) => {
-    //     //console.log(e.target.value);
-    //     //alert(comment);
-    //     setComments({ comments: [...comments, comment] });
-    //     e.preventDefault();
-    // };
-
-    //console.log(newComments);
+    const submitHandler = (e) => {
+        e.preventDefault();
+        comments.push({ username: "john", text: comment });
+        setComments(comments);
+        setComment("");
+    };
 
     return (
         <div className="comment-wrapper">
@@ -30,9 +27,9 @@ const CommentSection = (props) => {
                 return <Comment key={i} comment={item} />;
             })}
             <CommentInput
-            // comment={comment}
-            // changeComment={changeHandler}
-            // submitComment={submitHandler}
+                comment={comment}
+                changeComment={changeHandler}
+                submitComment={submitHandler}
             />
         </div>
     );
