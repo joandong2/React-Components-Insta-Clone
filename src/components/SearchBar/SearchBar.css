@@ -1,5 +1,13 @@
 .image-wrapper {
     margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+.image-wrapper i {
+    margin-right: 10px;
+}
+.image-wrapper img {
+    margin-left: 10px;
 }
 .search-bar-wrapper {
     border-bottom: 1px solid #3333;
