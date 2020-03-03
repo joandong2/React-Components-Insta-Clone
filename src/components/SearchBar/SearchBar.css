@@ -40,3 +40,6 @@
 .social {
     width: 50px;
 }
+input[type="submit"] {
+    display: none;
+}
